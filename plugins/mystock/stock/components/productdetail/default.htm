@@ -1,5 +1,6 @@
-{% set productdetail =__SELF__.productdetail %}
-<div class="product-essential">
+{% set product = __SELF__.product %}
+<div class="product-view">
+    <div class="product-essential">
                             <form method="post" id="product_addtocart_form">
                                 <input name="form_key" type="hidden" value="N4DL2crX27DuHSDk" />
                                 <div class="product-view-detail">
@@ -9,7 +10,7 @@
                                             <div class="product-img-box">
                                                 <div class="media-left">
                                                     <p class="product-image">
-                                                    {% for image in productdetail.images %}
+                                                    {% for image in product.images %}
                                                      <img class="em-product-main-img" src="{{ image.path }}" style="width: 100%;" alt='' title="WIASSI Version 1" /> </a> <a id="zoom-btn" rel="lightbox[em_lightbox]" href="images/product/1000x1000/5_1.jpg'|theme }}" title="WIASSI Version 1">Zoom</a>
                                                      {% endfor %}
                                                     </p>
@@ -21,7 +22,7 @@
                                             <div class="product-shop  fix_menu">
                                                 <div id="em-product-info-basic">
                                                     <div class="product-name">
-                                                        <h1>{{ productdetail.name }}</h1>
+                                                        <h1>{{ product.name }}</h1>
                                                     </div>
                                                     <div class="em-review-email">
                                                         <div class="ratings">
@@ -36,28 +37,28 @@
                                                     </div>
                                                     <span style="color: white">
                                                         Tình trạng : 
-                                                        {% if productdetail.quatity > 0 %}
+                                                        {% if product.quatity > 0 %}
                                                             <span>còn hàng</span>
                                                         {% else %}
                                                             <span>hết hàng</span>
                                                         {% endif %}
                                                     </span>
-                                                    <h3 style="color: white;">giá bán: <span style="color: red"> {{ productdetail.origin_price|number_format }} VNĐ </span></h3>
+                                                    <h3 style="color: white;">giá bán: <span style="color: red"> {{ product.origin_price|number_format }} VNĐ </span></h3>
                                                     <div class="em-sku-availability">
                                                         <p></p>
-                                                        <p class="availability in-stock"> lượt xem: <span class="value">{{ productdetail.view_count + 1 }}</span>
+                                                        <p class="availability in-stock"> lượt xem: <span class="value">{{ product.view_count + 1 }}</span>
                                                         </p>
                                                     </div>
                                                     <div class="short-description">
                                                         <h2>Giới thiệu</h2>
-                                                        <div class="std">{{ productdetail.content|raw }}</div>
+                                                        <div class="std">{{ product.content|raw }}</div>
                                                     </div>
                                                     <div>
 
                                                         <p class="availability in-stock">Availability: <span>In stock</span>
                                                         </p>
 
-                                                        <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">{{ productdetail.origin_price|number_format }} VNĐ</span> </span>
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">{{ product.origin_price|number_format }} VNĐ</span> </span>
                                                         </div>
                                                     </div>
                                                     <div class="add-to-box">

@@ -27,10 +27,7 @@ fields:
         span: auto
         type: fileupload
     parent_id:
-        label: 'Danh mục cha'
-        options:
-            - 'Danh mục cha'
+        label: Dropdown
         showSearch: true
         span: auto
-        required: 0
         type: dropdown
