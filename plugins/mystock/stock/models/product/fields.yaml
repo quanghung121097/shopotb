@@ -1,0 +1,52 @@
+fields:
+    name:
+        label: 'Tên sản phẩm'
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    sale_price:
+        label: 'Giá nhập'
+        span: auto
+        required: 1
+        type: text
+    origin_price:
+        label: 'Giá bán'
+        span: auto
+        required: 1
+        type: text
+    content:
+        label: 'Nội dung sản phẩm'
+        size: small
+        span: full
+        required: 1
+        stretch: 0
+        type: richeditor
+    category:
+        label: 'Danh mục cha'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    quantity:
+        label: 'Số lượng'
+        span: auto
+        required: 1
+        type: text
+    images:
+        label: 'Ảnh sản phẩm'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

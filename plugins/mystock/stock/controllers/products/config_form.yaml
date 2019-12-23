@@ -1,0 +1,10 @@
+name: Products
+form: $/mystock/stock/models/product/fields.yaml
+modelClass: Mystock\Stock\Models\Product
+defaultRedirect: mystock/stock/products
+create:
+    redirect: 'mystock/stock/products/update/:id'
+    redirectClose: mystock/stock/products
+update:
+    redirect: mystock/stock/products
+    redirectClose: mystock/stock/products

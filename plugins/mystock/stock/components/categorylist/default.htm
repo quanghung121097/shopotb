@@ -1,0 +1,26 @@
+{% set categories = __SELF__.categories %}
+{% for category in categories %}
+<li class="menu-item-vbox menu-item-depth-1 col-menu menu_col5 grid_5 menu-item-parent" style="">
+	<ul class="menu-container">
+		<li class="menu-item-text menu-item-depth-2  col-md-24 ">
+			<ul class="em-catalog-navigation vertical">
+				<li class="level0 nav-1 first parent">
+					{%if(category.parent_id==0)%}
+					<a href="{{ 'lists_product'|page({ slug:category.slug }) }}"> <span>{{category.name}}</span> </a>
+
+					<ul class="level0">
+						{% for cate in categories%}
+						{% if(cate.parent_id==category.id) %}
+						<li class="level1 nav-1-1 first">
+							<a href="{{ 'lists_product'|page({ slug:cate.slug }) }}"> <span>{{cate.name}}</span> </a>
+						</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</li>
+			</ul>
+		</li>
+	</ul>
+</li>
+{% endfor %}

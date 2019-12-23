@@ -1,0 +1,147 @@
+{% set product = __SELF__.product %}
+<div class="product-view">
+	<div class="product-essential">
+		<form method="post" id="product_addtocart_form">
+			<input name="form_key" type="hidden" value="N4DL2crX27DuHSDk" />
+			<div class="product-view-detail">
+				<div class="em-product-view row">
+					<div class="em-product-view-primary em-product-img-box col-sm-16 first">
+						<div id="em-product-shop-pos-top"></div>
+						<div class="product-img-box">
+							<div class="media-left">
+								<p class="product-image">
+									<a class="cloud-zoom" id="image_zoom" rel="zoomWidth: 500,zoomHeight: 500,position: 'inside'" href="images/product/1000x1000/5_1.jpg'|theme }}"> <img class="em-product-main-img" src="{{ 'assets/images/product/800x800/5_1.jpg'|theme }}" alt='' title="WIASSI Version 1" /> </a> <a id="zoom-btn" rel="lightbox[em_lightbox]" href="images/product/1000x1000/5_1.jpg'|theme }}" title="WIASSI Version 1">Zoom</a>
+								</p>
+							</div><!-- /.media-left -->
+
+						</div>
+					</div><!-- /.em-product-view-primary -->
+					<div class="em-product-view-secondary em-product-shop col-sm-8">
+						<div class="product-shop  fix_menu">
+							<div id="em-product-info-basic">
+								<div class="product-name">
+									<h1>{{ product.name }}</h1>
+								</div>
+								<div class="em-review-email">
+									<div class="ratings">
+										<p class="rating-links"> <a href="#" class="r-lnk link_review_list">1 Review(s)</a> <span class="separator">|</span> <a href="#" class="r-lnk link_review_form">Add Your Review</a>
+										</p>
+									</div><!-- /.ratings -->
+									<p class="email-friend"><a href="#">Email to a Friend</a>
+									</p>
+								</div>
+								<div class="em-sku-availability">
+									<p class="sku">Tình trạng: 
+										{%if(product.quantity > 0)%}
+										<h3>Còn hàng</h3>
+										{%else%}
+										<h3>Liên hệ</h3>
+										{%endif%}
+									</p>
+									<p class="availability in-stock"> Danh mục: <span class="value">{{ product.category.name }}</span>
+									</p>
+								</div>
+								<div class="short-description">
+									<h2>Quick Overview</h2>
+									<div class="std">{{product.content|raw}}</div>
+								</div>
+								<div>
+
+									<p class="availability in-stock">Danh mục: <span>{{ product.category.name }}</span>
+									</p>
+
+									<div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">{{ product.sale_price|number_format }} vnđ</span> </span>
+									</div>
+								</div>
+								<div class="add-to-box">
+									<div class="add-to-cart">
+										<label for="qty">Qty:</label>
+										<div class="qty_cart">
+											<div class="qty-ctl">
+												<button title="decrease" onclick="changeQty(0); return false;" class="decrease">decrease</button>
+											</div>
+											<input type="text" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" />
+											<div class="qty-ctl">
+												<button title="increase" onclick="changeQty(1); return false;" class="increase">increase</button>
+											</div>
+										</div>
+										<ul class="add-to-links">
+											<li><a title="Add to Wishlist" href="#" class="link-wishlist">Add to Wishlist</a>
+											</li>
+											<li><span class="separator">|</span> <a href="#" title="Add to Compare" class="link-compare">Add to Compare</a>
+											</li>
+										</ul>
+										<div class="button_addto">
+											<button type="button" title="Buy Now" id="em-buy-now" class="button btn-em-buy-now"><span><span>Add To Cart</span></span>
+											</button>
+
+										</div>
+									</div><!-- /.add-to-cart -->
+								</div><!-- /.add-to-box -->
+							</div><!-- /.em-product-info-basic -->
+						</div>
+					</div><!-- /.em-product-view-secondary -->
+				</div>
+				<div class="clearer"></div>
+			</div><!-- /.product-view-detail -->
+		</form>
+	</div><!-- /.product-essential -->
+	<div class="row">
+		<div class="em-product-view-primary col-sm-16 first">
+			<div class="em-product-info ">
+				<div class="em-product-details ">
+
+					<div class="box-collateral box-reviews em-line-01" id="customer-reviews">
+						<div id="customer_review_list" class="reviews">
+							<div class="em-block-title">
+								<h2>Customer Reviews</h2>
+							</div>
+							<div class="em-box-review">
+								<table>
+									<colgroup>
+										<col style="width:1%;" />
+										<col style="width:1%;" />
+										<col />
+									</colgroup>
+									<tr>
+										<td>
+											<p class="em-review-nickname" ><a href="http://demo.emthemes.com/everything/index.php/review/product/view/id/110/">Hung</a>
+											</p>
+											<p>shdcvhsdc</p>
+										</td>
+									</tr>
+								</table>
+							</div><!-- /.em-box-review -->
+						</div><!-- /#ustomer_review_list -->
+						<div class="form_review no_reviews">
+							<div class="form-add" id="customer_review_form">
+								<div class="em-block-title">
+									<h2>Write Your Own Review</h2>
+								</div>
+								<form method="post" id="review-form">
+									<fieldset>
+										<h3>You're reviewing: <span>WIASSI Version 1</span></h3>
+										<ul class="form-list">
+											<li>
+												<label for="review_field" class="required"><em>*</em>Review</label>
+												<div class="input-box">
+													<textarea name="detail" id="review_field" cols="5" rows="3" class="required-entry"></textarea>
+												</div>
+											</li>
+										</ul>
+									</fieldset>
+									<input type="hidden" name="validate_rating" class="validate-rating" value="" />
+									<div class="buttons-set">
+										<button type="submit" title="Submit Review" class="button"><span><span>Submit Review</span></span>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div><!-- /.form_review -->
+					</div><!-- /.box-collateral -->
+				</div><!-- /.em-product-details -->
+			</div><!-- /.em-product-info -->
+			<div id="em-product-shop-pos-bottom" style="display:inline-block;"></div>
+		</div>
+	</div>
+</div>

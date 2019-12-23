@@ -1,3 +1,6 @@
+[CategoryList]
+sort = "name desc"
+==
 <div id="em-mheader" class="visible-xs container">
     <div id="em-mheader-top" class="row">
         <div id="em-mheader-logo" class="col-xs-4">
@@ -479,25 +482,7 @@
                                             <li class="menu-item-link menu-item-depth-0 menu_custom menu_col6 menu-item-parent">
                                                 <a class="em-menu-link" href="#"> <span> Category </span> </a>
                                                 <ul class="menu-container">
-                                                    <li class="menu-item-vbox menu-item-depth-1 col-menu menu_col5 grid_5 menu-item-parent" style="">
-                                                        <ul class="menu-container">
-                                                            <li class="menu-item-text menu-item-depth-2  col-md-24 ">
-                                                                <ul class="em-catalog-navigation vertical">
-                                                                    <li class="level0 nav-1 first parent">
-                                                                        <a href="#"> <span>Furniture</span> </a>
-                                                                        <ul class="level0">
-                                                                            <li class="level1 nav-1-1 first">
-                                                                                <a href="#"> <span>Living Room</span> </a>
-                                                                            </li>
-                                                                            <li class="level1 nav-1-2 last">
-                                                                                <a href="#"> <span>Bedroom</span> </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
+                                                    {% component 'CategoryList' %}
                                                 </ul>
                                             </li><!-- /.menu-item-link -->
                                             <li class="menu-item-link menu-item-depth-0  menu-item-parent">

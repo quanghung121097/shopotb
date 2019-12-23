@@ -1,0 +1,7 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table mystock_stock_categories'
+    - builder_table_create_mystock_stock_categories.php
+    - 'Created table mystock_stock_products'
+    - builder_table_create_mystock_stock_products.php

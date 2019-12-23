@@ -1,0 +1,10 @@
+name: Categories
+form: $/mystock/stock/models/category/fields.yaml
+modelClass: Mystock\Stock\Models\Category
+defaultRedirect: mystock/stock/categories
+create:
+    redirect: 'mystock/stock/categories/update/:id'
+    redirectClose: mystock/stock/categories
+update:
+    redirect: mystock/stock/categories
+    redirectClose: mystock/stock/categories

@@ -1,0 +1,12 @@
+list: $/mystock/stock/models/product/columns.yaml
+modelClass: Mystock\Stock\Models\Product
+title: Products
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'mystock/stock/products/update/:id'

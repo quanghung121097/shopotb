@@ -1,0 +1,33 @@
+fields:
+    name:
+        label: 'Tên danh mục'
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: 'Mô tả danh mục'
+        span: auto
+        required: 1
+        type: text
+    thumbnail:
+        label: 'Ảnh danh mục'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    parent_id:
+        label: Dropdown
+        showSearch: true
+        span: auto
+        type: dropdown

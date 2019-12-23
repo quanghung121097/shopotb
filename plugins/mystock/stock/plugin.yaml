@@ -1,0 +1,20 @@
+plugin:
+    name: 'mystock.stock::lang.plugin.name'
+    description: 'mystock.stock::lang.plugin.description'
+    author: MyStock
+    icon: oc-icon-diamond
+    homepage: ''
+navigation:
+    'Quản lý':
+        label: 'Menu Item'
+        url: mystock/stock/categories
+        icon: icon-diamond
+        sideMenu:
+            Category:
+                label: Category
+                url: mystock/stock/categories
+                icon: icon-navicon
+            Product:
+                label: Product
+                url: mystock/stock/products
+                icon: icon-joomla

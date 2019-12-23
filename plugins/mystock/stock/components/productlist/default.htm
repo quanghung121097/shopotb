@@ -1,0 +1,67 @@
+{% set category = __SELF__.category %}
+<h1>{{category.name }}</h1>
+{% set products = __SELF__.products %}
+</div>
+<div class="category-products">
+	<div id="em-grid-mode">
+		<ul class="emcatalog-grid-mode products-grid emcatalog-disable-hover-below-mobile">
+			{%if((products.count())==0)%}
+			<div style="text-align: center; color: #FE2E2E;">
+				<h1>Coming soon...</h1>
+			</div>
+			{% else %}
+			{% for product in products %}
+			
+
+			<li class="item first">
+				<div class="product-item">
+					<div class="product-shop-top">
+						{% for image in product.images %}
+						<a href="#" title="WIASSI Version 1" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /> <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /><span class="bkg-hover"></span> </a>
+						{% endfor %}
+						<div class="bottom">
+							<div class="em-btn-addto text-center ">
+								<button type="button" title="Add to Cart" class="button btn-cart" onclick="206"><span><span>Add to Cart</span></span>
+								</button>
+								<ul class="add-to-links">
+									<li><a href="#206" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+									</li>
+									<li><a href="#206" class="link-compare" title="Add to Compare">Add to Compare</a>
+									</li>
+								</ul>
+							</div>
+							<div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+							</div>
+						</div>
+					</div>
+					<div class="product-shop">
+						<div class="f-fix">
+							<h2 class="product-name text-center  "><a href="" title="WIASSI Version 1">{{product.name}}</a></h2>
+							<div class=" text-center">
+								<div class="ratings">
+									<div class="rating-box">
+										<div class="rating" style="width:%"></div>
+									</div> <span class="amount"><a href="#" onclick="206">(0)</a></span>
+								</div>
+							</div>
+							<div class="text-center ">
+								<div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">{{product.sale_price|number_format}} vnđ</span> </span>
+								</div>
+							</div>
+							<div class="desc std text-center em-element-display-hover"> {{product.content|raw}}</div>
+						</div>
+					</div>
+				</div><!-- /.product-item -->
+			</li>
+			{% endfor %}
+			{% endif%}
+		</ul>
+	</div><!-- /.em-grid-mode -->
+	<div class="toolbar-bottom em-box-03">
+		<div class="toolbar">
+			<div class="pager">
+				<p class="amount"> <!--  --></p>
+				<div class="pages">
+					<ol>
+						{{ products.render|raw()}}
+					</ol>

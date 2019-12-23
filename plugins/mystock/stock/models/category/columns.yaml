@@ -1,0 +1,11 @@
+columns:
+    name:
+        label: 'Tên danh mục'
+        type: text
+        searchable: true
+    description:
+        label: 'Mô tả danh mục'
+        type: text
+    created_at:
+        label: 'thời gian tạo'
+        type: date

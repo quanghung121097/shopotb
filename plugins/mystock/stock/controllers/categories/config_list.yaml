@@ -1,0 +1,13 @@
+list: $/mystock/stock/models/category/columns.yaml
+modelClass: Mystock\Stock\Models\Category
+title: Categories
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+showTree: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'mystock/stock/categories/update/:id'
