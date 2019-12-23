@@ -13,8 +13,67 @@ is_hidden = 0
                     <div id="messages_product_view"></div>
                     <!-- /.product-view -->
                     {% component 'ProductDetail' %}
+                    <div class="row">
+                        <div class="em-product-view-primary col-sm-16 first">
+                            <div class="em-product-info ">
+                                <div class="em-product-details ">
+
+                                    <div class="box-collateral box-reviews em-line-01" id="customer-reviews">
+                                        <div id="customer_review_list" class="reviews">
+                                            <div class="em-block-title">
+                                                <h2>Customer Reviews</h2>
+                                            </div>
+                                            <div class="em-box-review">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:1%;" />
+                                                        <col style="width:1%;" />
+                                                        <col />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="em-review-nickname" ><a href="http://demo.emthemes.com/everything/index.php/review/product/view/id/110/">Hung</a>
+                                                            </p>
+                                                            <p>shdcvhsdc</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div><!-- /.em-box-review -->
+                                        </div><!-- /#ustomer_review_list -->
+                                        <div class="form_review no_reviews">
+                                            <div class="form-add" id="customer_review_form">
+                                                <div class="em-block-title">
+                                                    <h2>Write Your Own Review</h2>
+                                                </div>
+                                                <form method="post" id="review-form">
+                                                    <fieldset>
+                                                        <h3>You're reviewing: <span>WIASSI Version 1</span></h3>
+                                                        <ul class="form-list">
+                                                            <li>
+                                                                <label for="review_field" class="required"><em>*</em>Review</label>
+                                                                <div class="input-box">
+                                                                    <textarea name="detail" id="review_field" cols="5" rows="3" class="required-entry"></textarea>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </fieldset>
+                                                    <input type="hidden" name="validate_rating" class="validate-rating" value="" />
+                                                    <div class="buttons-set">
+                                                        <button type="submit" title="Submit Review" class="button"><span><span>Submit Review</span></span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div><!-- /.form_review -->
+                                    </div><!-- /.box-collateral -->
+                                </div><!-- /.em-product-details -->
+                            </div><!-- /.em-product-info -->
+                            <div id="em-product-shop-pos-bottom" style="display:inline-block;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div><!-- /.em-main-container -->
-    </div>
+        </div>
+    </div><!-- /.em-main-container -->
+</div>
 </div>

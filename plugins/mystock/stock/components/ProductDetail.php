@@ -14,8 +14,9 @@ class ProductDetail extends ComponentBase
     }
     public $product;
     public function onRun(){
-        $slug=$this->param('slug');
-        $this->product=product::where('slug',$slug)->orderBy('updated_at','desc')->first();
+        $slug = $this->param('slug');
+        $this->product = Product::where('slug',$slug)->first();
+        $productviewplus = Product::where('slug',$slug)->update(['view_count'=> $this->product->view_count + 1 ]);
 
     }
     public function defineProperties()
