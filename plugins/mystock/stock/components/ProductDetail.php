@@ -8,20 +8,19 @@ class ProductDetail extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'ProductDetail',
-            'description' => 'Chi tiết sản phẩm.'
+            'name'        => 'productDetail',
+            'description' => 'xem chi tiết sản phẩm'
         ];
     }
-    public $product;
+    public $productdetail;
     public function onRun(){
         $slug = $this->param('slug');
-        $this->product = Product::where('slug',$slug)->first();
-        $productviewplus = Product::where('slug',$slug)->update(['view_count'=> $this->product->view_count + 1 ]);
+        $this->productdetail = Product::where('slug',$slug)->first();
+        $productviewplus = Product::where('slug',$slug)->update(['view_count'=> $this->productdetail->view_count + 1 ]);
 
     }
     public function defineProperties()
     {
         return [];
     }
-
 }

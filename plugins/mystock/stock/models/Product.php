@@ -23,7 +23,6 @@ class Product extends Model
     ];
     public $belongsTo = [
         'category' => 'Mystock\Stock\Models\Category',
-        'table' =>'mystock_stock_categories'
     ];
     public $rules = [
         'name' => 'required|unique:mystock_stock_products,name',

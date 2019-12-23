@@ -1,6 +1,3 @@
-[CategoryList]
-sort = "name desc"
-==
 <div id="em-mheader" class="visible-xs container">
     <div id="em-mheader-top" class="row">
         <div id="em-mheader-logo" class="col-xs-4">
@@ -373,9 +370,9 @@ sort = "name desc"
                                 </ul>
                             </div>
                             <ul class="list-inline f-right">
-                                <li><a class="em-register-link" href="register.html" title="Register">Register</a></li>
+                                <li><a class="em-register-link" href="{{ '/register' }}" title="Register">Register</a></li>
                             </ul>
-                            <div id="em-login-link" class="account-link f-right em-non-login"> <a href="login.html" class="link-account" id="link-login" title="Login">Login</a>
+                            <div id="em-login-link" class="account-link f-right em-non-login"> <a href="{{ '/login' }}" class="link-account" id="link-login" title="Login">Login</a>
                                 <div class="em-account" id="em-account-login-form" style="display: none;">
                                     <form  method="post" id="top-login-form">
                                         <input name="form_key" type="hidden" value="iMzNKKno559ogiTe" />
@@ -422,7 +419,7 @@ sort = "name desc"
         <div class="container em-menu-fix-pos">
             <div class="row">
                 <div class="col-sm-24">
-                    <div class="em-logo f-left"><a href="#" title="Game World Commerce" class="logo"><strong>Game World Commerce</strong><img class="retina-img" src="{{ 'assets/images/logo.png'|theme }}" alt="Game World Commerce" /></a>
+                    <div class="em-logo f-left"><a href="{{ '/' }}" title="Game World Commerce" class="logo"><strong>Game World Commerce</strong><img src="{{ 'assets/images/logo.png'|theme }}"></a>
                     </div>
                     <div class="em-search f-right">
                         <div class="em-top-search">
@@ -482,7 +479,25 @@ sort = "name desc"
                                             <li class="menu-item-link menu-item-depth-0 menu_custom menu_col6 menu-item-parent">
                                                 <a class="em-menu-link" href="#"> <span> Category </span> </a>
                                                 <ul class="menu-container">
-                                                    {% component 'CategoryList' %}
+                                                    <li class="menu-item-vbox menu-item-depth-1 col-menu menu_col5 grid_5 menu-item-parent" style="">
+                                                        <ul class="menu-container">
+                                                            <li class="menu-item-text menu-item-depth-2  col-md-24 ">
+                                                                <ul class="em-catalog-navigation vertical">
+                                                                    <li class="level0 nav-1 first parent">
+                                                                        <a href="#"> <span>Furniture</span> </a>
+                                                                        <ul class="level0">
+                                                                            <li class="level1 nav-1-1 first">
+                                                                                <a href="#"> <span>Living Room</span> </a>
+                                                                            </li>
+                                                                            <li class="level1 nav-1-2 last">
+                                                                                <a href="#"> <span>Bedroom</span> </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li><!-- /.menu-item-link -->
                                             <li class="menu-item-link menu-item-depth-0  menu-item-parent">

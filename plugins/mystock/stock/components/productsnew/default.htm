@@ -1,0 +1,44 @@
+{% set productsnew = __SELF__.productsnew %}
+{% for product in productsnew %}
+	<div class="item first">
+		<div class="product-item">
+			<div class="product-shop-top">
+				{% for image in product.images %}
+					<a href="{{ 'product_detail'|page({slug: product.slug}) }}" title=" Frozen" class="product-image">
+							 <img class="img-test" src="{{ image.path }}" style="width: 218px;height: 218px;" >
+						  </a>
+					  {% endfor %}
+					<div class="em-element-display-hover bottom">
+						<div class="em-btn-addto">
+							<!--product add to cart-->
+							<button type="button" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span>
+							</button>
+							<!--product add to compare-wishlist-->
+							<ul class="add-to-links">
+								<li><a href="#406" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+								</li>
+								<li><span class="separator">|</span> <a href="#406" class="link-compare" title="Add to Compare">Add to Compare</a>
+								</li>
+							</ul>
+						</div>
+						<div class="quickshop-link-container"> <a href="{{''}}" class="quickshop-link" title="Quickshop">Quickshop</a> </div>
+					</div>
+				</div>
+				<div class="product-shop" style="height:160px;">
+					<div class="f-fix" style="height: 80px;">
+						<!--product name-->
+						<h3 class="product-name"><a href="{{ 'product_detail'|page({slug: product.slug}) }}" title=" Frozen">{{ str_limit(product.name,30) }}</a></h3>
+						<!--product description-->
+						<!--product reviews-->
+						<div class="ratings">
+							<span>Còn lại: </span>
+							 <span class="amount"><a href="{{''}}">{{ product.quantity }}</a></span> </div>
+							<!--product price-->
+						</div>
+						<div class="price-box"> <span class="regular-price">
+							<span class="price">{{ product.origin_price|number_format }} VNĐ</span> </span>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.item -->
+{% endfor %}

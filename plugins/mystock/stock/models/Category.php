@@ -20,17 +20,8 @@ class Category extends Model
      * @var array Validation rules
      */
     public $belongsTo = [
-        'category' => [
-            'Mystock\Stock\Models\Category',
-            'table' =>'mystock_stock_categories'
-    ],
+        'category' => 'Mystock\Stock\Models\Category',
     ];
-    public $hasMany = [
-        'product' => [
-            'Mystock\Stock\Models\Product',
-            'table' => 'mystock_stock_products'
-        ]
-    ]; 
     public $attachOne = [
         'thumbnail' => 'System\Models\File',
     ];
@@ -45,11 +36,4 @@ class Category extends Model
         'slug.unique' => 'Slug đã tồn tại',
         'description.min' => ':attribute không được nhỏ hơn :min'
     ];
-    public function getParentIdOptions()
-    {
-        $danhmuc=[0 => 'Danh mục cha'];
-        $danhmuccha=$danhmuc+Category::get()->lists('name','id');
-        return $danhmuccha;
-       
-    }
 }

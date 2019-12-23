@@ -1,0 +1,27 @@
+{% set productPhone = __SELF__.productPhone %}
+{% for product in productPhone %}
+	<div class="item" style="  ">
+		<a href="{{ 'product_detail'|page({slug:product.slug}) }}" title="Marvel's Avengers" class="product-image">
+			{% for image in product.images %}
+		 <img class="em-alt-hover img-responsive em-img-lazy" src="{{ image.path }}" width="120" height="120" alt="Marvel's Avengers" /> 
+		 {% endfor %}
+			{% for image in product.images %}
+			<img class="img-responsive em-img-lazy em-alt-org" src="{{ image.path }}" width="120" height="120" alt="Marvel's Avengers" />
+			{% endfor %} </a>
+		<div class="product-shop">
+			<div class="f-fix">
+				<!--product name-->
+				<h3 class="product-name"><a href="{{ 'product_detail'|page({slug:product.slug}) }}" title="Marvel's Avengers">{{ str_limit(product.name,30) }}</a></h3>
+				<!--product description-->
+				<!--product reviews-->
+				<div class="ratings">
+
+ <span class="amount"><a href="{{ 'product_detail'|page({slug:product.slug}) }}">còn lại :{{ product.quantity }} </a></span> </div>
+					<!--product price-->
+					<div class="price-box"> <span class="regular-price">
+						<span class="price">{{ product.origin_price|number_format }} VNĐ</span> </span>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endfor %}
