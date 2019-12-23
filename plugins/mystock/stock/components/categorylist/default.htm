@@ -6,7 +6,7 @@
 			<ul class="em-catalog-navigation vertical">
 				<li class="level0 nav-1 first parent">
 					{%if(category.parent_id==0)%}
-					<a href="{{ 'lists_product'|page({ slug:category.slug }) }}"> <span>{{category.name}}</span> </a>
+					<a href="{{ 'lists_product'|page({ slug:category.slug }) }}"> <span>{{category.name}}</span></a>
 
 					<ul class="level0">
 						{% for cate in categories%}
@@ -17,6 +17,7 @@
 						{% endif %}
 						{% endfor %}
 					</ul>
+
 					{% endif %}
 				</li>
 			</ul>

@@ -3,7 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Mystock\Stock\Models\Product;
 
-class product extends ComponentBase
+class ProductDetail extends ComponentBase
 {
     public function componentDetails()
     {

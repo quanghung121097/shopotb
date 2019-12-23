@@ -26,9 +26,6 @@
                                                     </div>
                                                     <div class="em-review-email">
                                                         <div class="ratings">
-                                                            <div class="rating-box">
-                                                                <div class="rating" style="width:67%"></div> <span>67</span>
-                                                            </div>
                                                             <p class="rating-links"> <a href="#" class="r-lnk link_review_list">1 Review(s)</a> <span class="separator">|</span> <a href="#" class="r-lnk link_review_form">Add Your Review</a>
                                                             </p>
                                                         </div><!-- /.ratings -->
@@ -37,29 +34,29 @@
                                                     </div>
                                                     <span style="color: white">
                                                         Tình trạng : 
-                                                        {% if product.quatity > 0 %}
-                                                            <span>còn hàng</span>
+                                                        {% if product.quantity > 0 %}
+                                                            <span>Còn hàng</span>
                                                         {% else %}
-                                                            <span>hết hàng</span>
+                                                            <span>Liên hệ</span>
                                                         {% endif %}
                                                     </span>
-                                                    <h3 style="color: white;">giá bán: <span style="color: red"> {{ product.origin_price|number_format }} VNĐ </span></h3>
                                                     <div class="em-sku-availability">
                                                         <p></p>
-                                                        <p class="availability in-stock"> lượt xem: <span class="value">{{ product.view_count + 1 }}</span>
+                                                        <p class="availability in-stock"> lượt xem: <span class="value">{{ product.view_count+1 }}</span>
                                                         </p>
                                                     </div>
-                                                    <div class="short-description">
-                                                        <h2>Giới thiệu</h2>
-                                                        <div class="std">{{ product.content|raw }}</div>
-                                                    </div>
+                                                    
                                                     <div>
 
                                                         <p class="availability in-stock">Availability: <span>In stock</span>
                                                         </p>
 
-                                                        <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">{{ product.origin_price|number_format }} VNĐ</span> </span>
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price" style="color: #FE642E"  content="750">{{ product.sale_price|number_format }} VNĐ</span> </span>
                                                         </div>
+                                                    </div>
+                                                    <div class="short-description">
+                                                        <h2>Mô tả</h2>
+                                                        <div class="std">{{ product.content|raw }}</div>
                                                     </div>
                                                     <div class="add-to-box">
                                                         <div class="add-to-cart">
