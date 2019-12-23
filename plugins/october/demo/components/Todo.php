@@ -18,7 +18,7 @@ class Todo extends ComponentBase
     {
         return [
             'max' => [
-                'description'       => 'The most amount of todo items allowed222',
+                'description'       => 'The most amount of todo items allowed2223',
                 'title'             => 'Max items',
                 'default'           => 10,
                 'type'              => 'string',
