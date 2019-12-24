@@ -8,8 +8,8 @@ class ProductDetail extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'ProductDetail',
-            'description' => 'Chi tiết sản phẩm.'
+            'name'        => 'product',
+            'description' => 'xem chi tiết sản phẩm',
         ];
     }
     public $product;
@@ -23,5 +23,4 @@ class ProductDetail extends ComponentBase
     {
         return [];
     }
-
 }

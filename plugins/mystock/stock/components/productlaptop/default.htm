@@ -1,0 +1,25 @@
+{% set productLaptop = __SELF__.productLaptop %}
+{% for product in productLaptop %}
+<div class="item first" style="  ">
+		<a href="{{ 'product_detail'|page({slug:product.slug}) }}" title=" Frozen" class="product-image"> 
+			{% for image in product.images %}
+			<img class="em-alt-hover img-responsive em-img-lazy" src="{{ image.path }}" style="width: 100px;height: 100px" alt=" Frozen" /> 
+			 {% endfor %}
+			 {% for image in product.images %}
+			<img class="img-responsive em-img-lazy em-alt-org" src="{{ image.path }}" style="width: 100px;height: 100px" alt=" Frozen" />
+			 {% endfor %}
+			 </a>
+		<div class="product-shop">
+			<div class="f-fix">
+				<!--product name-->
+				<h3 class="product-name"><a style="font-size: 15px !important" href="{{ 'product_detail'|page({slug:product.slug}) }}" title=" Frozen">{{ str_limit(product.name,15) }}</a></h3>
+				<!--product description-->
+				<!--product reviews-->
+				<!--product price-->
+				<div class="price-box"> <span class="regular-price">
+					<span class="price" style="font-size: 15px !important;">{{ product.origin_price|number_format }} VNĐ</span> </span>
+				</div>
+			</div>
+		</div>
+	</div>
+		{% endfor %}

@@ -23,7 +23,7 @@ class Category extends Model
         'category' => [
             'Mystock\Stock\Models\Category',
             'table' =>'mystock_stock_categories'
-    ],
+        ],
     ];
     public $hasMany = [
         'product' => [
@@ -45,6 +45,7 @@ class Category extends Model
         'slug.unique' => 'Slug đã tồn tại',
         'description.min' => ':attribute không được nhỏ hơn :min'
     ];
+
     public function getParentIdOptions()
     {
         $danhmuc=[0 => 'Danh mục cha'];

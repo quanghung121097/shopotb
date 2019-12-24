@@ -3,10 +3,10 @@ columns:
         label: 'Tên sản phẩm'
         type: text
         searchable: true
-    sale_price:
+    origin_price:
         label: 'Giá nhập'
         type: number
-    origin_price:
+    sale_price:
         label: 'GIá bán'
         type: number
     category_id:

@@ -17,7 +17,7 @@
 				<div class="product-item">
 					<div class="product-shop-top">
 						{% for image in product.images %}
-						<a href="#" title="WIASSI Version 1" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /> <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /><span class="bkg-hover"></span> </a>
+						<a href="{{ 'product_detail'|page({ slug:product.slug }) }}" title="WIASSI Version 1" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /> <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /><span class="bkg-hover"></span> </a>
 						{% endfor %}
 						<div class="bottom">
 							<div class="em-btn-addto text-center ">
@@ -36,7 +36,7 @@
 					</div>
 					<div class="product-shop">
 						<div class="f-fix">
-							<h2 class="product-name text-center  "><a href="" title="WIASSI Version 1">{{product.name}}</a></h2>
+							<h2 class="product-name text-center  "><a href="{{ 'product_detail'|page({ slug:product.slug }) }}" title="WIASSI Version 1">{{product.name}}</a></h2>
 							<div class=" text-center">
 								<div class="ratings">
 									<div class="rating-box">
@@ -48,7 +48,7 @@
 								<div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">{{product.sale_price|number_format}} vnđ</span> </span>
 								</div>
 							</div>
-							<div class="desc std text-center em-element-display-hover"> {{product.content|raw}}</div>
+							<div class="desc std text-center em-element-display-hover">{{ str_limit(product.content|raw , 20) }}</div>
 						</div>
 					</div>
 				</div><!-- /.product-item -->
