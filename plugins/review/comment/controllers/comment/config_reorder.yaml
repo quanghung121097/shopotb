@@ -1,0 +1,4 @@
+title: Comment
+modelClass: Review\Comment\Models\Comment
+toolbar:
+    buttons: reorder_toolbar

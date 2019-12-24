@@ -1,0 +1,11 @@
+list: $/review/comment/models/comment/columns.yaml
+modelClass: Review\Comment\Models\Comment
+title: Comment
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
