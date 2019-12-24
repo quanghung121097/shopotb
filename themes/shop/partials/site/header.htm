@@ -4,7 +4,7 @@ sort = "name desc"
 <div id="em-mheader" class="visible-xs container">
     <div id="em-mheader-top" class="row">
         <div id="em-mheader-logo" class="col-xs-4">
-            <div class="em-logo"><a href="{{ '' }}" title="Game World Commerce" class="logo"><strong>Game World Commerce</strong><img src="{{ 'assets/images/logo_small.png'|theme }}'|theme }}" alt="Game World Commerce" /></a>
+            <div class="em-logo"><a href="{{ '/' }}" title="Game World Commerce" class="logo"><strong>Game World Commerce</strong><img src="{{ 'assets/images/logo_small.png'|theme }}" alt="Game World Commerce" /></a>
             </div>
         </div>
         <div class="col-xs-20">
@@ -40,9 +40,9 @@ sort = "name desc"
                                         <li class="selected">
                                             <a href="#" title="English"> <img alt="english" src="{{ 'assets/images/language/english.png'|theme }}" /> </a>
                                         </li>
-                                        <li class="">
-                                            <a href="#" title="French"> <img alt="french" src="htimages/language/french.html" /> </a>
-                                        </li>
+                                        <!-- <li class="">
+                                            <a href="#" title="French"> <img alt="french" src="{{'assets/images/language/french.html'|theme}}" /> </a>
+                                        </li> -->
                                     </ul>
                                 </div><!-- /.form-language -->
                                 <div class="em-currency-style-mobile">
@@ -60,9 +60,10 @@ sort = "name desc"
                         <div class="em-top-links row">
                             <div class="">
                                 <ul class="top-header-link links">
-                                    <li class="first col-xs-8"> <a title="Log In" class="login-link fa fa-user" href="#"><span>Log In</span></a>
+
+                                    <li class="first col-xs-8"> <a title="Log In" class="login-link fa fa-user" href="{{'/login'}}"><span>Log In</span></a>
                                     </li>
-                                    <li class="col-xs-8"> <a title="Sign up" class='signup-link fa fa-sign-out' href="#"><span>Sign up</span></a>
+                                    <li class="col-xs-8"> <a title="Sign up" class='signup-link fa fa-sign-out' href="{{'/register'}}"><span>Sign up</span></a>
                                     </li>
                                     <li class="last col-xs-8"> <a href="#" class="checkout-link fa fa-shopping-cart"><span>Cart</span></a>
                                     </li>
@@ -77,178 +78,33 @@ sort = "name desc"
                                     <div class="megamenu-wrapper wrapper-7_8258">
                                         <div class="em_nav" id="toogle_menu_7_8258">
                                             <ul class="hnav em_menu_mobile">
-                                                <li class="menu-item-link menu-item-depth-0 fa fa-home menu-item-parent">
-                                                    <a class="em-menu-link" href="#"> <span> Home </span> </a>
-                                                    <ul class="menu-container">
-                                                        <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col9 grid_18 menu-item-parent" style="">
-                                                            <ul class="menu-container">
-                                                                <li class="menu-item-vbox menu-item-depth-2 col-sm-12 menu-item-parent" style="">
-                                                                    <ul class="menu-container">
-                                                                        <li class="menu-item-text menu-item-depth-3  ">
-                                                                            <ul class="em-line-01">
-                                                                                <li>
-                                                                                    <h4>Layout styles</h4>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <ul class="menu-link">
-                                                                                        <li><a href="#">Home Default</a>
-                                                                                        </li>
-                                                                                        <li><a href="#">Home Style 02</a>
-                                                                                        </li>
-                                                                                        <li><a href="#">Home Style 03</a>
-                                                                                        </li>
-                                                                                        <li><a href="#">Home Style 04</a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li class="menu-item-vbox menu-item-depth-2 col-sm-12 menu-item-parent" style="">
-                                                                    <ul class="menu-container">
-                                                                        <li class="menu-item-text menu-item-depth-3  ">
-                                                                            <div class="em-line-01">
-                                                                                <h4>Header styles</h4>
-                                                                                <div>
-                                                                                    <ul class="menu-link">
-                                                                                        <li><a href="#">Header Style 01</a>
-                                                                                        </li>
-                                                                                        <li><a href="#">Header Style 02</a>
-                                                                                        </li>
-                                                                                        <li><a href="#">Header Style 04</a>
-                                                                                        </li>
-                                                                                        <li><a href="#">Header Style 03</a>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
+                                                <li class="menu-item-link menu-item-depth-0 fa fa-home ">
+                                                    <a class="em-menu-link" href="{{'/'}}"> <span> Home </span></a>
                                                 </li><!-- /.menu-item-link -->
                                                 <li class="menu-item-link menu-item-depth-0 dd-menu-link fa fa-bars menu-item-parent">
                                                     <a class="em-menu-link" href="#"> <span> Category </span> </a>
                                                     <ul class="menu-container">
+
+
                                                         <li class="menu-item-text menu-item-depth-1  ">
                                                             <ul class="em-catalog-navigation vertical">
+
+                                                                {% for category in CategoryList.categories %}
                                                                 <li class="level0 nav-1 first parent">
-                                                                    <a href="#"> <span>Furniture</span> </a>
+                                                                    {%if(category.parent_id==0)%}
+                                                                    <a href="{{ 'lists_product'|page({ slug:category.slug }) }}"> <span>{{category.name}}</span> </a>
                                                                     <ul class="level0">
+                                                                        {% for cate in CategoryList.categories%}
+                                                                        {% if(cate.parent_id==category.id) %}
                                                                         <li class="level1 nav-1-1 first">
-                                                                            <a href="#"> <span>Living Room</span> </a>
+                                                                            <a href="{{ 'lists_product'|page({ slug:cate.slug }) }}"> <span>{{cate.name}}</span> </a>
                                                                         </li>
-                                                                        <li class="level1 nav-1-2 last">
-                                                                            <a href="#"> <span>Bedroom</span> </a>
-                                                                        </li>
+                                                                        {% endif %}
+                                                                        {% endfor %}
                                                                     </ul>
+                                                                    {%endif%}
                                                                 </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-2 parent">
-                                                                    <a href="#"> <span>Electronics</span> </a>
-                                                                    <ul class="level0">
-                                                                        <li class="level1 nav-2-1 first">
-                                                                            <a href="#"> <span>Cell Phones</span> </a>
-                                                                        </li>
-                                                                        <li class="level1 nav-2-2 parent">
-                                                                            <a href="#"> <span>Cameras</span> </a>
-                                                                            <ul class="level1">
-                                                                                <li class="level2 nav-2-2-1 first">
-                                                                                    <a href="#"> <span>Accessories</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-2-2 last">
-                                                                                    <a href="#"> <span>Digital Cameras</span> </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li class="level1 nav-2-3 last parent">
-                                                                            <a href="#"> <span>Computers</span> </a>
-                                                                            <ul class="level1">
-                                                                                <li class="level2 nav-2-3-3 first">
-                                                                                    <a href="#"> <span>Build Your Own</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-3-4">
-                                                                                    <a href="#"> <span>Laptops</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-3-5">
-                                                                                    <a href="#"> <span>Hard Drives</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-3-6">
-                                                                                    <a href="#"> <span>Monitors</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-3-7">
-                                                                                    <a href="#"> <span>RAM / Memory</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-3-8">
-                                                                                    <a href="#"> <span>Cases</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-3-9">
-                                                                                    <a href="#"> <span>Processors</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-2-3-10 last">
-                                                                                    <a href="#"> <span>Peripherals</span> </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-3 parent">
-                                                                    <a href="#"> <span>Apparel</span> </a>
-                                                                    <ul class="level0">
-                                                                        <li class="level1 nav-3-1 first">
-                                                                            <a href="#"> <span>Shirts</span> </a>
-                                                                        </li>
-                                                                        <li class="level1 nav-3-2 parent">
-                                                                            <a href="#"> <span>Shoes</span> </a>
-                                                                            <ul class="level1">
-                                                                                <li class="level2 nav-3-2-1 first">
-                                                                                    <a href="#"> <span>Mens</span> </a>
-                                                                                </li>
-                                                                                <li class="level2 nav-3-2-2 last">
-                                                                                    <a href="#"> <span>Womens</span> </a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li class="level1 nav-3-3 last">
-                                                                            <a href="#"> <span>Hoodies</span> </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-4">
-                                                                    <a href="#"> <span>Fashion</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-5">
-                                                                    <a href="#"> <span>Shoes</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-6">
-                                                                    <a href="#"> <span>Glasses</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-7">
-                                                                    <a href="#"> <span>Game World</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-8">
-                                                                    <a href="#"> <span>Game World &amp; Outdoor</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-9">
-                                                                    <a href="#"> <span>Swatch</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-10">
-                                                                    <a href="#"> <span>Jewelry</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-11">
-                                                                    <a href="#"> <span>Home Game World</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-12">
-                                                                    <a href="#"> <span>Lingerie</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-13">
-                                                                    <a href="#"> <span>Beauty</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
-                                                                <li class="level0 nav-14 last">
-                                                                    <a href="#"> <span>Game &amp; Movies</span> </a>
-                                                                </li><!-- /.menu-item-vbox -->
+                                                                {% endfor %}
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -366,16 +222,20 @@ sort = "name desc"
                     </div>
                     <div class="">
                         <div class="em-top-links">
-                            <div class="f-right"></div>
-                            <div class="f-right">
-                                <ul class="em-links-wishlist">
-                                    <li class="first last"><a href="wishlist.html" title="Wishlist">Wishlist</a></li>
-                                </ul>
-                            </div>
+
+                            {% if user %}
+                            
                             <ul class="list-inline f-right">
-                                <li><a class="em-register-link" href="register.html" title="Register">Register</a></li>
+                                <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a></li>
                             </ul>
-                            <div id="em-login-link" class="account-link f-right em-non-login"> <a href="login.html" class="link-account" id="link-login" title="Login">Login</a>
+                            <ul class="list-inline f-right">
+                                <li><a class="em-links-wishlist" href="" title="Wishlist">Xin chào: {{ user.name }}</a></li>
+                            </ul>
+                            {% else %}
+                            <ul class="list-inline f-right">
+                                <li><a class="em-register-link" href="{{'/register'}}" title="Register">Register</a></li>
+                            </ul>
+                            <div id="em-login-link" class="account-link f-right em-non-login"> <a href="{{'/login'}}" class="link-account" id="link-login" title="Login">Login</a>
                                 <div class="em-account" id="em-account-login-form" style="display: none;">
                                     <form  method="post" id="top-login-form">
                                         <input name="form_key" type="hidden" value="iMzNKKno559ogiTe" />
@@ -412,6 +272,10 @@ sort = "name desc"
                                     </form><!-- /.top-login-form -->
                                 </div><!-- /.em-account -->
                             </div><!-- /#em-login-link -->
+                            {% endif %}
+                            
+                            
+                            
                         </div><!-- /.em-top-links -->
                     </div>
                 </div>
