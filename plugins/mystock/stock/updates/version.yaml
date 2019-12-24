@@ -5,3 +5,9 @@
     - builder_table_create_mystock_stock_categories.php
     - 'Created table mystock_stock_products'
     - builder_table_create_mystock_stock_products.php
+1.0.3:
+    - 'Created table mystock_stock_comment'
+    - builder_table_create_mystock_stock_comment.php
+1.0.4:
+    - 'Updated table mystock_stock_comment'
+    - builder_table_update_mystock_stock_comment.php

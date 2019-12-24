@@ -8,7 +8,7 @@ use Model;
 class Product extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
 
     /**
      * @var string The database table used by the model.
@@ -38,4 +38,5 @@ class Product extends Model
         'slug.unique' => 'Slug đã tồn tại',
         'numeric' => ':attribute phải là kiểu số',
     ];
+
 }

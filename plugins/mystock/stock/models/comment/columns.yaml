@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: false
+        invisible: false
+        sortable: false
+    content:
+        label: 'Nội Dung'
+        type: text
+        searchable: false
+        invisible: false
+        sortable: false
+    created_at:
+        label: 'Thời Gian Tạo'
+        type: datetime
+        searchable: false
+        invisible: false
+        sortable: false

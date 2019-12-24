@@ -18,3 +18,7 @@ navigation:
                 label: Product
                 url: mystock/stock/products
                 icon: icon-joomla
+            side-menu-item:
+                label: Comment
+                url: mystock/stock/comment
+                icon: icon-comments

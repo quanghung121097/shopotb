@@ -1,0 +1,4 @@
+title: Comment
+modelClass: Mystock\Stock\Models\Comment
+toolbar:
+    buttons: reorder_toolbar
