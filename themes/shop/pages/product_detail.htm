@@ -6,6 +6,9 @@ is_hidden = 0
 [ProductDetail]
 
 [Comment]
+
+[session]
+security = "all"
 ==
 <div class="container container-main">
     <div class="em-inner-main">
@@ -19,34 +22,8 @@ is_hidden = 0
                             <div class="em-product-view-primary col-sm-16 first">
                                 <div class="em-product-info ">
                                     <div class="em-product-details ">
-
-                                        <div class="box-collateral box-reviews em-line-01" id="customer-reviews">
-                                            <div id="customer_review_list" class="reviews">
-                                                <div class="em-block-title">
-                                                    <h2>Customer Reviews</h2>
-                                                </div>
-                                                <div class="em-box-review">
-                                                    <table>
-                                                        <colgroup>
-                                                            <col style="width:1%;" />
-                                                            <col style="width:1%;" />
-                                                            <col />
-                                                        </colgroup>
-                                                        <tr>
-                                                            <td>
-                                                                <p class="em-review-nickname" ><a href="http://demo.emthemes.com/everything/index.php/review/product/view/id/110/">Long</a>
-                                                                </p>
-                                                                <p>Nguyễn khánh Long</p>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div><!-- /.em-box-review -->
-                                            </div><!-- /#ustomer_review_list -->
-
-                                            {% component 'Comment' %}
-
-                                        </div><!-- /.box-collateral -->
-                                    </div><!-- /.em-product-details -->
+                                        {% component 'Comment' %}
+                                    </div>
                                 </div><!-- /.em-product-info -->
                                 <div id="em-product-shop-pos-bottom" style="display:inline-block;"></div>
                             </div>
