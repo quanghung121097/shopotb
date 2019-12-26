@@ -2,7 +2,7 @@
 <div class="item">
 <div class="product-item">
 	<div class="product-shop-top">
-		<a href="{{ 'product_detail'|page({slug: productPricehight.slug}) }}" title="Iron Man 3" class="product-image">
+		<a href="{{ 'product_detail'|page({slug: productPricehight.slug}) }}" title="{{ productPricehight.name }}" class="product-image">
 		 {% for image in productPricehight.images %}
 		 <img class="img-responsive em-img-lazy em-alt-org" src="{{ image.path }}" style="width: 378px;height: 378px" />
 		 {% endfor %}
@@ -13,14 +13,9 @@
 				<button type="button" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span>
 				</button>
 				<!--product add to compare-wishlist-->
-				<ul class="add-to-links">
-					<li><a href="{{''}}" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
-					</li>
-					<li><span class="separator">|</span> <a href="{{''}}" class="link-compare" title="Add to Compare">Add to Compare</a>
-					</li>
-				</ul>
+				
 			</div>
-			<div class="quickshop-link-container"> <a href="{{''}}" class="quickshop-link" title="Quickshop">Quickshop</a> </div>
+			<div class="quickshop-link-container"> <a href="{{ 'product_detail'|page({slug: productPricehight.slug}) }}" class="quickshop-link" title="Quickshop">Quickshop</a> </div>
 		</div>
 	</div>
 		<div class="product-shop">

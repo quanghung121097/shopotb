@@ -1,7 +1,7 @@
 {% set productPhone = __SELF__.productPhone %}
 {% for product in productPhone %}
 	<div class="item" style="  ">
-		<a href="{{ 'product_detail'|page({slug:product.slug}) }}" title="Marvel's Avengers" class="product-image">
+		<a href="{{ 'product_detail'|page({slug:product.slug}) }}" title="{{ product.name }}" class="product-image">
 			{% for image in product.images %}
 		 <img class="em-alt-hover img-responsive em-img-lazy" src="{{ image.path }}" width="120" height="120" alt="Marvel's Avengers" /> 
 		 {% endfor %}

@@ -15,6 +15,8 @@ class Plugin extends PluginBase
             'Mystock\Stock\Components\ProductPhone' => 'ProductPhone',
             'Mystock\Stock\Components\ProductLaptop' => 'ProductLaptop',
             'Mystock\Stock\Components\ProductViewHight' => 'ProductViewHight',
+            'Mystock\Stock\Components\ContactForm' => 'ContactForm',
+
             'Mystock\Stock\Components\Comment' =>'Comment',
         ];
     }

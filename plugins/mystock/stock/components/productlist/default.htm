@@ -17,20 +17,14 @@
 				<div class="product-item">
 					<div class="product-shop-top">
 						{% for image in product.images %}
-						<a href="{{ 'product_detail'|page({ slug:product.slug }) }}" title="WIASSI Version 1" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /> <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /><span class="bkg-hover"></span> </a>
+						<a href="{{ 'product_detail'|page({ slug:product.slug }) }}" title="{{product.name}}" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /> <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="{{ image.path }}" width="220" height="220" alt="WIASSI Version 1" /><span class="bkg-hover"></span> </a>
 						{% endfor %}
 						<div class="bottom">
 							<div class="em-btn-addto text-center ">
 								<button type="button" title="Add to Cart" class="button btn-cart" onclick="206"><span><span>Add to Cart</span></span>
 								</button>
-								<ul class="add-to-links">
-									<li><a href="#206" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
-									</li>
-									<li><a href="#206" class="link-compare" title="Add to Compare">Add to Compare</a>
-									</li>
-								</ul>
 							</div>
-							<div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+							<div class="quickshop-link-container"> <a href="{{ 'product_detail'|page({ slug:product.slug }) }}" class="quickshop-link" title="Quickshop">Quickshop</a>
 							</div>
 						</div>
 					</div>

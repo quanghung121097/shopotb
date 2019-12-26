@@ -1,7 +1,7 @@
 {% set productLaptop = __SELF__.productLaptop %}
 {% for product in productLaptop %}
 <div class="item first" style="  ">
-		<a href="{{ 'product_detail'|page({slug:product.slug}) }}" title=" Frozen" class="product-image"> 
+		<a href="{{ 'product_detail'|page({slug:product.slug}) }}" title=" {{product.name}}" class="product-image"> 
 			{% for image in product.images %}
 			<img class="em-alt-hover img-responsive em-img-lazy" src="{{ image.path }}" style="width: 100px;height: 100px" alt=" Frozen" /> 
 			 {% endfor %}
@@ -12,7 +12,7 @@
 		<div class="product-shop">
 			<div class="f-fix">
 				<!--product name-->
-				<h3 class="product-name"><a style="font-size: 15px !important" href="{{ 'product_detail'|page({slug:product.slug}) }}" title=" Frozen">{{ str_limit(product.name,15) }}</a></h3>
+				<h3 class="product-name"><a style="font-size: 15px !important" href="{{ 'product_detail'|page({slug:product.slug}) }}" title=" {{product.name}}">{{ str_limit(product.name,15) }}</a></h3>
 				<!--product description-->
 				<!--product reviews-->
 				<!--product price-->

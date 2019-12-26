@@ -1,3 +1,4 @@
+{% if user %}
 <div class="form_review no_reviews">
     <div class="form-add" id="customer_review_form">
         <div class="em-block-title">
@@ -5,7 +6,6 @@
         </div>
         <form data-request="onSave">
             <fieldset>
-                <h3>You're reviewing: <span>WIASSI Version 1</span></h3>
                 <ul class="form-list">
                     <li>
                         <label for="review_field" class="required"><em>*</em>Review</label>
@@ -22,4 +22,31 @@
             </div>
         </form>
     </div>
+    {% endif %}
 </div><!-- /.form_review -->
+<div class="box-collateral box-reviews em-line-01" id="customer-reviews" style="margin-top: 50px">
+    <div id="customer_review_list" class="reviews">
+        <div class="em-block-title">
+            <h2>Customer Reviews</h2>
+        </div>
+        {% set comments = __SELF__.comments %}
+        {% for comment in comments %}
+        <div class="row comment_content" style="padding: 0px 20px;margin-bottom: 20px" >
+            <div class="col-md-2 img_user">
+                <img style="border-radius: 100px;width: 50px;" src="{{'assets/images/user.jpg'|theme }}">
+            </div>
+            <div class="col-md-10" style="color: #ffffff">
+                <div class="comment_name_user" style="font-weight: bold">
+                    {{comment.user_name}}
+                </div>
+                <div class="comment-create" style="font-size: 12px">
+                    {{comment.created_at}}
+                </div>
+                <div class="comment-content" style="font-weight: bold;font-size: 18px">
+                    {{comment.content}}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
